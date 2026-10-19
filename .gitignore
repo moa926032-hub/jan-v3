@@ -1,0 +1,9 @@
+# Local environment variables and credentials
+.env
+.env.*
+!.env.example
+
+# Dependencies and local WhatsApp sessions
+node_modules/
+session/
+session_*/
