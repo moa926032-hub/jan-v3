@@ -285,7 +285,7 @@ const config = {
     // kalian bisa daftar di https://api.neoxr.eu, lalu ambil apikeynya
     neoxr: "Milik-Bot-OurinMD",
     fgsi: "fgsiapi-20c1605c-6d",
-    google: process.env.GOOGLE_API_KEY || "",
+    google: "AIzaSyAS-KiW0SrwiYKwexeBcGPijBVHFg2R_vo",
     groq: "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", // API Key Groq untuk fitur transkrip (gratis di console.groq.com)
     betabotz: "Btz-67YfP",
     // kalian bisa daftar di https://covenant.sbs, dan ambil apikeynya
