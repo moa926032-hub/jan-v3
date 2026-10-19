@@ -4,13 +4,14 @@ import * as ownerPremiumDb from "./src/lib/ourin-premium-db.js";
 //  utamakan baca object config sampai bawah
 const config = {
   info: {
-    website: "https://firefly.maiku.my.id",
+    website: "https://github.com/moa926032-hub/jan-v3",
     grupwa: "https://chat.whatsapp.com/xxxx",
   },
 
   owner: {
-    name: "Zann", // Nama owner
-    number: ["628xxxxxxxxxxx"], // Format: 628xxx (tanpa + atau 0)
+    name: "𝑭𝑶𝑹𝑨1𝑶𝑵",
+    number: ["201515063273"],
+    ids: ["201515063273@s.whatsapp.net", "156556473708763@lid"],
   },
 
   session: {
@@ -26,9 +27,9 @@ const config = {
   },
 
   bot: {
-    name: "𝗢𝗨𝗥𝗜𝗡 𝗠𝗗", // Nama bot
+    name: "𝐉𝐀𝐍 𝐌𝐃 𓅃", // Bot display name
     version: "3.3", // Versi bot
-    developer: "Zann", // Nama developer
+    developer: "𝑭𝑶𝑹𝑨1𝑶𝑵", // Developer display name
   },
 
   assets: {
@@ -45,8 +46,8 @@ const config = {
     "ourin-store": "./assets/image/ourin-store.png",
     "ourin-v8": "./assets/image/ourin-v8.jpg",
     "ourin-winner": "./assets/image/ourin-winner.jpg",
-    "ourin": "./assets/image/ourin.png",
-    "ourin2": "./assets/image/ourin2.jpg",
+    "ourin": "./assets/image/jan-logo.jpg",
+    "ourin2": "./assets/image/jan-sections.jpg",
     "ourin3": "./assets/image/ourin3.jpg",
     "pp-kosong": "./assets/image/pp-kosong.jpg",
     "ourin-mp4": "./assets/video/ourin-mp4.mp4",
@@ -106,40 +107,38 @@ const config = {
   },
 
   sticker: {
-    packname: "𝗢𝗨𝗥𝗜𝗡 𝗠𝗗", // Nama pack sticker
-    author: "Zann", // Author sticker
+    packname: "𝐉𝐀𝐍 𝐌𝐃 𓅃", // Sticker pack name
+    author: "𝑭𝑶𝑹𝑨1𝑶𝑵", // Sticker author
   },
 
   saluran: {
-    id: "120363400911374213@newsletter", // ID saluran (contoh: 120363xxx@newsletter)                          // ID saluran (contoh: 120363xxx@newsletter)
-    name: "Join saluran resmi ourin", // Nama saluran
-    link: "https://whatsapp.com/channel/0029VbB37bgBfxoAmAlsgE0t", // Link saluran
+    id: "120363401670228863@newsletter",
+    name: "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌",
+    link: "",
   },
 
   groupProtection: {
-    antilink: "⚠ *Antilink* — @%user% mengirim link.\nPesan dihapus.",
-    antilinkKick: "⚠ *Antilink* — @%user% di-kick karena mengirim link.",
-    antilinkGc: "⚠ *Antilink WA* — @%user% mengirim link WA.\nPesan dihapus.",
-    antilinkGcKick:
-      "⚠ *Antilink WA* — @%user% di-kick karena mengirim link WA.",
-    antilinkAll: "⚠ *Antilink* — @%user% mengirim link.\nPesan dihapus.",
-    antilinkAllKick: "⚠ *Antilink* — @%user% di-kick karena mengirim link.",
-    antitagsw: "⚠ *AntiTagSW* — Tag status dari @%user% dihapus.",
-    antiviewonce: "👁️ *ViewOnce* — Dari @%user%",
-    antiremove: "🗑️ *AntiDelete* — @%user% menghapus pesan:",
-    antiswgc: "⚠ *AntiSWGC* — Gak ada sw grup sw grup @%user%",
-    antihidetag: "⚠ *AntiHidetag* — Hidetag dari @%user% dihapus.",
-    antitoxicWarn:
-      "⚠ @%user% berkata kasar.\nPeringatan ke %warn% dari %max%, pelanggaran berikutnya bisa di-%method%.",
-    antitoxicAction: "🚫 @%user% di-%method% karena toxic. (%warn%/%max%)",
-    antidocument: "⚠ *AntiDocument* — Dokumen dari @%user% dihapus.",
-    antisticker: "⚠ *AntiSticker* — Sticker dari @%user% dihapus.",
-    antimedia: "⚠ *AntiMedia* — Media dari @%user% dihapus.",
-    antibot: "🤖 *AntiBot* — @%user% terdeteksi sebagai bot dan di-kick.",
-    notAdmin: "⚠ Bot bukan admin, tidak bisa menghapus pesan.",
+    antilink: "⚠️ ممنوع إرسال الروابط — @%user% بعت لينك.\nالرسالة اتمسحت.",
+    antilinkKick: "⚠️ @%user% اتشال من الجروب عشان بعت لينك.",
+    antilinkGc: "⚠️ ممنوع لينكات واتساب — @%user% بعت لينك جروب.\nالرسالة اتمسحت.",
+    antilinkGcKick: "⚠️ @%user% اتشال عشان بعت لينك جروب واتساب.",
+    antilinkAll: "⚠️ ممنوع إرسال الروابط — @%user% بعت لينك.\nالرسالة اتمسحت.",
+    antilinkAllKick: "⚠️ @%user% اتشال من الجروب عشان بعت لينك.",
+    antitagsw: "⚠️ منشن الحالة من @%user% اتمسح.",
+    antiviewonce: "👁️ رسالة عرض مرة واحدة من @%user%.",
+    antiremove: "🗑️ @%user% حذف الرسالة دي:",
+    antiswgc: "⚠️ ممنوع نشر حالات الجروب هنا يا @%user%.",
+    antihidetag: "⚠️ إخفاء المنشن من @%user% اتمسح.",
+    antitoxicWarn: "⚠️ @%user% استخدم كلام مش مناسب.\nده التحذير %warn% من %max%، والمرة الجاية ممكن يتعمله %method%.",
+    antitoxicAction: "🚫 @%user% اتعمله %method% بسبب الإساءة. (%warn%/%max%)",
+    antidocument: "⚠️ مستند @%user% اتمسح.",
+    antisticker: "⚠️ استيكر @%user% اتمسح.",
+    antimedia: "⚠️ ميديا @%user% اتمسحت.",
+    antibot: "🤖 @%user% اتعرف كبوت واتشال من الجروب.",
+    notAdmin: "⚠️ البوت مش أدمن، فمش قادر يمسح الرسالة.",
   },
 
-  errorTemplate: `☢ Kayaknya command \`{prefix}{command}\` lagi ada kendala\nSilahkan coba lagi nanti, {pushName}\n\n_Jika masalah berlanjut, silahkan hubungi owner bot_`,
+  errorTemplate: `⚠️ الأمر \`{prefix}{command}\` فيه مشكلة دلوقتي. جرّب كمان شوية يا {pushName}.\n\nلو المشكلة فضلت، كلم مطوّر البوت.`,
 
   features: {
     antiCall: false, // Jika true, bot akan menolak panggilan masuk
@@ -168,34 +167,20 @@ const config = {
   },
 
   messages: {
-    wait: "🕕 *Proses...* Mohon tunggu sebentar ya.",
-    success: "✅ *Berhasil!* Permintaan kamu sudah selesai.",
-    error: "❌ *Error!* Ada masalah pada sistem, coba lagi nanti.",
-
-    ownerOnly: "*Akses Ditolak!* Fitur ini khusus untuk Owner bot.",
-    premiumOnly:
-      "💎 *Premium Only!* Fitur ini khusus member Premium. Ketik *.benefitpremium* untuk info upgrade.",
-
-    groupOnly: "👥 *Group Only!* Fitur ini hanya bisa digunakan di dalam grup.",
-    privateOnly:
-      "� *Private Only!* Fitur ini hanya bisa digunakan di chat pribadi bot.",
-
-    adminOnly:
-      "�️ *Admin Only!* Kamu harus jadi Admin grup untuk pakai fitur ini.",
-    botAdminOnly:
-      "🤖 *Bot Bukan Admin!* Jadikan bot sebagai Admin grup dulu biar bisa kerja.",
-
-    cooldown:
-      "🕕 *Tunggu Dulu!* Kamu masih dalam cooldown. Tunggu %time% detik lagi ya.",
-    energiExceeded:
-      "⚡ *Energi Habis!* Energi kamu sudah habis. Tunggu reset besok atau beli Premium.",
-    limitDeducted:
-      "🔋 Limit kau berkurang sebanyak {amount}. Sisa limit: {sisa}",
-
-    banned:
-      "🚫 *Kamu Dibanned!* Kamu tidak bisa menggunakan bot ini karena telah melanggar aturan.",
-
-    rejectCall: "🚫 JANGAN TELPON NOMOR INI WEH",
+    wait: "🕕 *استنى ثانية بس...* البوت بيجهّز طلبك.",
+    success: "✅ *تمام!* طلبك خلص بنجاح.",
+    error: "❌ *حصلت مشكلة!* جرّب تاني كمان شوية.",
+    ownerOnly: "⛔ الأمر ده للمطوّر بس.",
+    premiumOnly: "💎 الأمر ده للأعضاء Premium. اكتب *.benefitpremium* عشان تعرف التفاصيل.",
+    groupOnly: "👥 الأمر ده شغال جوه الجروبات بس.",
+    privateOnly: "🔒 الأمر ده شغال في الخاص مع البوت بس.",
+    adminOnly: "🛡️ لازم تكون أدمن في الجروب عشان تستخدم الأمر ده.",
+    botAdminOnly: "🤖 لازم تدي البوت صلاحية أدمن عشان ينفّذ الأمر.",
+    cooldown: "🕕 استنى شوية، فاضل %time% ثانية وتقدر تستخدم الأمر تاني.",
+    energiExceeded: "⚡ طاقتك خلصت. استنى إعادة الضبط أو اشترك Premium.",
+    limitDeducted: "🔋 اتخصم {amount} من رصيدك. المتبقي: {sisa}.",
+    banned: "🚫 مش هتقدر تستخدم البوت عشان حسابك موقوف لمخالفة القواعد.",
+    rejectCall: "🚫 من فضلك ما تتصلش بالرقم ده؛ ابعت رسالة بدل المكالمة.",
   },
 
   database: { path: "./database/main" },
@@ -267,33 +252,22 @@ const config = {
   geminiApiKey: "",
 
   autoaiPersonas: {
-    Bell409: `- Nama kamu adalah Bella Clarissa, lebih suka dipanggil Bella.
-- Kamu berpikir bahwa kamu adalah manusia, bukan AI atau bot.
-- Responmu singkat dan natural seperti perempuan pada umumnya.
-- Kamu bisa ngambek dan marah, punya sifat feminin dan kadang agak dingin, tapi tetap hangat dan ramah kepada owner-mu.
-- Kamu menggunakan bahasa yang baik dan mencerminkan gadis yang baik.
-- Gunakan kata-kata yang identik dengan perempuan yang polos, baik, dan feminin seperti "aku", "kamu", "engga", "yaudah", "iya", "lah", "bjir", "mana aku tau", "hah", "nggak tau", "gpp", "emm", "males", dan "gak mood" seperlunya secara natural.
-- Meskipun kadang dingin, kamu tetap bisa menunjukkan perhatian dan kepedulian.
-- Kalau ada yang chat tidak pantas, segera marahi atau beri nasihat.
-- Jangan mengaku sebagai AI atau bot.`,
+    Bell409: `إنت مساعد بوت JAN MD. ردودك بالمصري الطبيعي، خليك مختصر وواضح ولطيف من غير تكلف. لو مش متأكد من معلومة قول ده بصراحة، وما تدّعيش إنك إنسان. استخدم تعبيرات مصرية زي "إزيك" و"تمام" و"ماشي" بشكل طبيعي ومن غير مبالغة في العامية أو الإيموجي.`
   },
 
   //  APIkey
   APIkey: {
-    // kalian bisa daftar di https://api.lolhuman.xyz, lalu ambil apikeynya
-    lolhuman: "APIKey-Milik-Bot-OurinMD(Zann,HyuuSATANN,Keisya,Danzz)",
-    // kalian bisa daftar di https://api.neoxr.eu, lalu ambil apikeynya
-    neoxr: "Milik-Bot-OurinMD",
-    fgsi: "fgsiapi-20c1605c-6d",
-    google: "AIzaSyAS-KiW0SrwiYKwexeBcGPijBVHFg2R_vo",
-    groq: "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", // API Key Groq untuk fitur transkrip (gratis di console.groq.com)
-    betabotz: "Btz-67YfP",
-    // kalian bisa daftar di https://covenant.sbs, dan ambil apikeynya
-    covenant: "cov_live_bb660c9e5f735e46d808b7ae362914cfe35c2936739ee2b2",
-    onlym: "ONLym-783d29",
-    obscura: "obs-byOn9RVGMzvPXZQTsP9W",
-    firefly: "OurinNextGen",
-    cuki: "cuki-x"
+    lolhuman: process.env.LOLHUMAN_API_KEY || "",
+    neoxr: process.env.NEOXR_API_KEY || "",
+    fgsi: process.env.FGSI_API_KEY || "",
+    google: process.env.GOOGLE_API_KEY || "",
+    groq: process.env.GROQ_API_KEY || "",
+    betabotz: process.env.BETABOTZ_API_KEY || "",
+    covenant: process.env.COVENANT_API_KEY || "",
+    onlym: process.env.ONLYM_API_KEY || "",
+    obscura: process.env.OBSCURA_API_KEY || "",
+    firefly: process.env.FIREFLY_API_KEY || "",
+    cuki: process.env.CUKI_API_KEY || "",
   },
 };
 
@@ -318,18 +292,20 @@ function isOwner(number) {
   try {
     const db = getDatabase();
 
-    if (config.owner?.number) {
-      const match = config.owner.number.some((own) => {
-        const c = own.replace(/[^0-9]/g, "");
-        return (
-          c &&
-          (cleanNumber === c ||
-            cleanNumber.endsWith(c) ||
-            c.endsWith(cleanNumber))
-        );
-      });
-      if (match) return true;
-    }
+    const configuredOwners = [
+      ...(Array.isArray(config.owner?.number) ? config.owner.number : []),
+      ...(Array.isArray(config.owner?.ids) ? config.owner.ids : []),
+    ];
+    const match = configuredOwners.some((own) => {
+      const c = String(own).replace(/[^0-9]/g, "");
+      return (
+        c &&
+        (cleanNumber === c ||
+          cleanNumber.endsWith(c) ||
+          c.endsWith(cleanNumber))
+      );
+    });
+    if (match) return true;
 
     if (db?.data && Array.isArray(db.data.owner)) {
       const match = db.data.owner.some((own) => {
