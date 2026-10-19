@@ -1,5 +1,5 @@
 import https from 'https'
-const API_KEY = "YOUR_API_KEY"
+const API_KEY = process.env.TOPMEDIA_API_KEY || ""
 
 function generateCustomTTS(speakerId, text) {
   return new Promise((resolve, reject) => {
