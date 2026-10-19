@@ -191,8 +191,8 @@ async function handleCommand(m, sock) {
                 forwardingScore: 9999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: "120363400911374213@newsletter",
-                  newsletterName: "Ourin Case System",
+                  newsletterJid: config.saluran?.id || "120363401670228863@newsletter",
+                  newsletterName: config.saluran?.name || "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌",
                   serverMessageId: 127,
                 },
               },
@@ -279,8 +279,8 @@ async function handleCommand(m, sock) {
                 forwardingScore: 9999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: "120363400911374213@newsletter",
-                  newsletterName: "Ourin Plugin System",
+                  newsletterJid: config.saluran?.id || "120363401670228863@newsletter",
+                  newsletterName: config.saluran?.name || "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌",
                   serverMessageId: 127,
                 },
               },
