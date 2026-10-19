@@ -47,7 +47,7 @@ async function handler(m, { sock, config: botConfig }) {
       m.chat,
       {
         contacts: {
-          displayName: `Ini adalah owner kami`,
+          displayName: `مطور بوت JAN MD`,
           contacts,
         },
       },
@@ -55,10 +55,10 @@ async function handler(m, { sock, config: botConfig }) {
 
     );
     await sock.sendMessage(m.chat, {
-      text: "💬 Jika kamu memiliki pertanyaan, jangan ragu untuk bertanya, owner ramah kok"
+      text: "💬 لو عندك سؤال أو محتاج مساعدة، كلم مطوّر البوت على الرقم اللي تحت."
     }, { quoted: zanne })
   } else {
-    const ownerText = `👑 *ᴏᴡɴᴇʀ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ*\n\n╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n┃ ㊗ ɴᴀᴍᴀ: *${ownerNumbers.map((n) => getOwnerName(n)).join(", ")}*\n┃ ㊗ ʙᴏᴛ: *${botName}*\n┃ ㊗ sᴛᴀᴛᴜs: *🟢 Online*\n╰┈┈⬡\n\n> _Jika ada pertanyaan atau kendala,_\n> _silakan hubungi owner di atas!_\n> _📞 Contact card di bawah._`;
+    const ownerText = `👑 *معلومات مطوّر البوت*\n\n╭┈┈⬡「 📋 *التفاصيل* 」\n┃ الاسم: *${ownerNumbers.map((n) => getOwnerName(n)).join(", ")}*\n┃ البوت: *${botName}*\n┃ الحالة: *🟢 متصل*\n╰┈┈⬡\n\nلو عندك سؤال أو محتاج مساعدة، تواصل مع المطوّر من الكارت اللي تحت.`;
 
     await m.reply(ownerText);
 
