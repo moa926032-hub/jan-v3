@@ -28,7 +28,7 @@ const pluginConfig = {
   name: "menu",
   alias: ["help", "bantuan", "commands", "m"],
   category: "main",
-  description: "Menampilkan menu utama bot",
+  description: "عرض القائمة الرئيسية للبوت",
   usage: ".menu",
   example: ".menu",
   isOwner: false,
@@ -381,7 +381,7 @@ function getContextInfo(
   const saluranId = botConfig.saluran?.id || "120363401670228863@newsletter";
   const saluranName =
     botConfig.saluran?.name || "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌";
-  const saluranLink = botConfig.saluran?.link || "";
+  const saluranLink = botConfig.saluran?.link || botConfig.info?.website || "";
   const ctx = {
     mentionedJid: [m.sender],
     forwardingScore: 9,
