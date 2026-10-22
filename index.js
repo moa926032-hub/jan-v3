@@ -160,7 +160,7 @@ let srcWatcher = null;
 function startSrcWatcher(srcPath) {
   if (srcWatcher) srcWatcher.close();
 
-  logger.system("dev", "Pantauan hot-reload buat src udah jalan bosku");
+  logger.system("dev", "Pantauan MO buat src udah jalan bosku");
 
   srcWatcher = fs.watch(srcPath, { recursive: true }, (eventType, filename) => {
     if (!filename || !filename.endsWith(".js")) return;
@@ -402,8 +402,8 @@ async function main() {
         startMemoryMonitor();
         startTempCleaner();
         startDailyPruner();
-        logger.success("YEYYYY", `Semua sistem udah jalan mantap, langsug saja🚀`);
-        logger.success("NOTE", `Kalau ada error. mohon dimaklumi, soalnnya bukan bot bagus :)`);
+        logger.success("YEYYYY", `MO sistem udah jalan mantap, langsug saja🚀`);
+        logger.success("NOTE", `MO ada error. mohon dimaklumi, soalnnya bukan bot bagus :)`);
         divider();
       }
     },
