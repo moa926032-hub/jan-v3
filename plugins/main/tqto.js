@@ -6,7 +6,7 @@ const pluginConfig = {
     name: 'tqto',
     alias: ['thanksto', 'credits', 'kredit'],
     category: 'main',
-    description: 'Menampilkan daftar kontributor bot',
+    description: 'عرض حقوق ومعلومات تطوير البوت',
     usage: '.tqto',
     example: '.tqto',
     isOwner: false,
@@ -18,82 +18,27 @@ const pluginConfig = {
     isEnabled: true
 }
 
-async function handler(m, { sock }) {
-    const botName = config.bot?.name || 'Ourin-AI'
-    const version = config.bot?.version || '1.0.0'
-    const developer = config.bot?.developer || 'Lucky Archz'
+async function handler(m) {
+    const botName = config.bot?.name || '𝐉𝐀𝐍 𝐌𝐃 𓅃'
+    const version = config.bot?.version || '3.3'
+    const developer = config.bot?.developer || '𝑭𝑶𝑹𝑨1𝑶𝑵'
+    const channelName = config.saluran?.name || '𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌'
 
     const credits = [
-        { name: 'hyuuOkkotsuX', role: 'Lead Staff', icon: '👨‍💻' },
-        { name: 'Zann', role: 'Creator Ourin MD dan APK Stardem Ourin', icon: '👨‍💻' },
-        { name: 'SenzOkkotsu', role: 'Developer', icon: '👨‍💻' },
-        { name: 'Ell', role: 'Developer', icon: '👨‍💻' },
-        { name: 'Aqell', role: 'Developer SC BUG Ourin Glitch', icon: '👨‍💻' },
-        { name: 'Mobbc', role: 'Staff', icon: '👨‍💻' },
-        { name: 'Raka', role: 'Staff', icon: '👨‍💻' },
-        { name: 'Sanxz', role: 'Tangan Kanan', icon: '👨‍💻' },
-        { name: 'Dinz', role: 'Tangan Kanan', icon: '👨‍💻' },
-        { name: 'Forone Store', role: 'Tangan Kanan', icon: '🛒' },
-        { name: 'Fahmi', role: 'Tangan Kanan', icon: '👨‍💻' },
-        { name: 'Sabila', role: 'Tangan Kanan', icon: '👩‍💻' },
-        { name: 'Syura Store', role: 'Tangan Kanan', icon: '👩‍💻' },
-        { name: 'Xero', role: 'Tangan Kanan', icon: '👩‍💻' },
-        { name: 'Aji', role: 'Tangan Kanan', icon: '👩‍💻' },
-        { name: 'Lyoraaa', role: 'Owner', icon: '👩‍💻' },
-        { name: 'Danzzz', role: 'Owner', icon: '👨‍💻' },
-        { name: 'Muzan', role: 'Owner', icon: '👨‍💻' },
-        { name: 'Gray', role: 'Owner', icon: '👨‍💻' },
-        { name: 'Baim', role: 'Moderator', icon: '👨‍💻' },
-        { name: 'Vadel', role: 'Moderator', icon: '👨‍💻' },
-        { name: 'Fikzz', role: 'Moderator', icon: '🛒' },
-        { name: 'Caca', role: 'Moderator', icon: '👨‍💻' },
-        { name: 'panceo', role: 'Partner', icon: '🛒' },
-        { name: 'KingSatzID', role: 'Partner', icon: '🛒' },
-        { name: 'Dashxz', role: 'Partner', icon: '🛒' },
-        { name: 'This JanzZ', role: 'Partner', icon: '🛒' },
-        { name: 'Ahmad', role: 'Partner', icon: '🛒' },
-        { name: 'nopal', role: 'Partner', icon: '🛒' },
-        { name: 'tuadit', role: 'Partner', icon: '🛒' },
-        { name: 'andry', role: 'Partner', icon: '🛒' },
-        { name: 'kingdanz', role: 'Partner', icon: '🛒' },
-        { name: 'patih', role: 'Partner', icon: '🛒' },
-        { name: 'Ryuu', role: 'Partner', icon: '🛒' },
-        { name: 'Pororo', role: 'Partner', icon: '🛒' },
-        { name: 'Janzz', role: 'Partner', icon: '🛒' },
-        { name: 'Morvic', role: 'Partner', icon: '🛒' },
-        { name: 'zylnzee', role: 'Partner', icon: '🛒' },
-        { name: 'Farhan', role: 'Partner', icon: '🛒' },
-        { name: 'Alizz', role: 'Partner', icon: '🛒' },
-        { name: 'Kiram', role: 'Partner', icon: '🛒' },
-        { name: 'Minerva', role: 'Partner', icon: '🛒' },
-        { name: 'HanzPiw', role: 'Partner', icon: '🛒' },
-        { name: 'Ryuzen', role: 'Partner', icon: '🛒' },
-        { name: 'Ahmad', role: 'Partner', icon: '🛒' },
-        { name: 'Riam', role: 'Partner', icon: '🛒' },
-        { name: 'Erren', role: 'Partner', icon: '🛒' },
-        { name: 'ranzen', role: 'Partner', icon: '🛒' },
-        { name: 'Febri', role: 'Partner', icon: '🛒' },
-        { name: 'Kuze', role: 'Partner', icon: '🛒' },
-        { name: 'Oscar Dani', role: 'Partner', icon: '🛒' },
-        { name: 'Udun', role: 'Partner', icon: '🛒' },
-        { name: 'Renn', role: 'Partner', icon: '🛒' },
-        { name: 'Taka', role: 'Partner', icon: '🛒' },
-        { name: 'Tatskuyy', role: 'Partner', icon: '🛒' },
-        { name: 'Yann', role: 'Partner', icon: '🛒' },
-        { name: 'Zanspiw', role: 'Youtuber', icon: '🌐' },
-        { name: 'Danzz Nano', role: 'Youtuber', icon: '🌐' },
-        { name: 'Youtuber Lain yang udah review', role: 'Youtuber', icon: '🌐' },
-        { name: 'Kalian Semua', role: 'Best', icon: '🌐' },
-        { name: 'Open Source Community', role: 'Libraries & Tools', icon: '🌐' },
-
+        { name: developer, role: 'المطوّر والمسؤول عن نسخة JAN MD — 01515063273', icon: '👨‍💻' },
+        { name: channelName, role: 'القناة الرسمية للبوت', icon: '📢' },
+        { name: 'مجتمع البرمجيات مفتوحة المصدر', role: 'شكرًا لمطوّري المكتبات والأدوات المستخدمة', icon: '🌐' },
     ]
 
-    const headers = ['No', 'Nama', 'Role / Tier']
-    const rows = credits.map((c, i) => [i + 1, c.name, c.role])
+    const creditLines = credits
+        .map((credit, index) => `*${index + 1}.* *${credit.name}* — ${credit.icon} ${credit.role}`)
+        .join('\n')
 
-    await m.reply(`🍟 *Berikut ini adalah orang orang yang sudah berkontribusi di bot ${config.bot.name}*
-        
-${credits.map((c, i) => `*${i + 1}*. *${c.name}* [ ${c.icon} ${c.role} ]`).join('\n')}}`)
+    await m.reply(`💜 *حقوق وتطوير ${botName}*
+
+> الإصدار: *${version}*
+
+${creditLines}`)
 }
 
 export { pluginConfig as config, handler }
