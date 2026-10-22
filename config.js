@@ -15,7 +15,7 @@ const config = {
   },
 
   session: {
-    pairingNumber: "62xxxxxxxxxxx", // Nomor WA yang akan di-pair, ini penting
+    pairingNumber: "", // سيطلب رقم حساب واتساب البوت عند التشغيل
     usePairingCode: true, // true = Pairing Code, false = QR Code
   },
 

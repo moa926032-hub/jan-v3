@@ -644,32 +644,32 @@ async function startConnection(options = {}) {
           const inviter = event.author || "";
           const inviterMention = inviter
             ? `@${inviter.split("@")[0]}`
-            : "seseorang";
+            : "مستخدم";
           const prefix = config.command?.prefix || ".";
 
-          let groupName = "grup ini";
+          let groupName = "الجروب ده";
           try {
             const meta = await sock.groupMetadata(event.id);
-            groupName = meta.subject || "grup ini";
+            groupName = meta.subject || "الجروب ده";
           } catch { }
 
           const saluranId =
-            config.saluran?.id || "120363400911374213@newsletter";
+            config.saluran?.id || "120363401670228863@newsletter";
           const saluranName =
-            config.saluran?.name || config.bot?.name || "Ourin-AI";
+            config.saluran?.name || "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌";
 
           const welcomeText =
-            `👋 *ʜᴀɪ, sᴀʟᴀᴍ ᴋᴇɴᴀʟ!*\n\n` +
-            `Aku *${config.bot?.name || "Ourin-AI"}* 🤖\n\n` +
-            `Terima kasih sudah mengundang aku ke *${groupName}*!\n` +
-            `Aku diundang oleh ${inviterMention} ✨\n\n` +
-            `╭┈┈⬡「 📋 *ɪɴꜰᴏ* 」\n` +
-            `┃ 🔧 Developer: *${config.bot?.developer || "Lucky Archz"}*\n` +
-            `┃ 📢 Prefix: \`${prefix}\`\n` +
-            `┃ 📩 Support: ${config.bot?.support || "-"}\n` +
+            `👋 *أهلًا، سعيدين بانضمامنا!*\n\n` +
+            `أنا *${config.bot?.name || "𝐉𝐀𝐍 𝐌𝐃 𓅃"}* 🤖\n\n` +
+            `شكرًا إنكم ضفتوني لـ *${groupName}*!\n` +
+            `الدعوة وصلت من ${inviterMention} ✨\n\n` +
+            `╭┈┈⬡「 📋 *معلومات البوت* 」\n` +
+            `┃ 🔧 المطوّر: *${config.bot?.developer || "𝑭𝑶𝑹𝑨1𝑶𝑵"}*\n` +
+            `┃ 📢 البادئة: \`${prefix}\`\n` +
+            `┃ 📩 الدعم: ${config.bot?.support || "-"}\n` +
             `╰┈┈⬡\n\n` +
-            `> Ketik \`${prefix}menu\` untuk melihat daftar fitur\n` +
-            `> Ketik \`${prefix}help\` untuk bantuan`;
+            `> اكتب \`${prefix}menu\` عشان تشوف كل المزايا\n` +
+            `> اكتب \`${prefix}help\` لو محتاج مساعدة`;
 
           await sock.sendMessage(event.id, {
             text: welcomeText,

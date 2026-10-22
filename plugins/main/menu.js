@@ -28,7 +28,7 @@ const pluginConfig = {
   name: "menu",
   alias: ["help", "bantuan", "commands", "m"],
   category: "main",
-  description: "Menampilkan menu utama bot",
+  description: "عرض القائمة الرئيسية للبوت",
   usage: ".menu",
   example: ".menu",
   isOwner: false,
@@ -378,17 +378,17 @@ function getContextInfo(
   thumbBuffer,
   renderLargerThumbnail = false,
 ) {
-  const saluranId = botConfig.saluran?.id || "120363400911374213@newsletter";
+  const saluranId = botConfig.saluran?.id || "120363401670228863@newsletter";
   const saluranName =
-    botConfig.saluran?.name || botConfig.bot?.name || "Ourin-AI";
-  const saluranLink = botConfig.saluran?.link || "";
+    botConfig.saluran?.name || "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌";
+  const saluranLink = botConfig.saluran?.link || botConfig.info?.website || "";
   const ctx = {
     mentionedJid: [m.sender],
     forwardingScore: 9,
     isForwarded: true,
     externalAdReply: {
-      title: botConfig.bot?.name || "Ourin-AI",
-      body: `BOT WHATSAPP MULTI DEVICE`,
+      title: botConfig.bot?.name || "𝐉𝐀𝐍 𝐌𝐃 𓅃",
+      body: `بوت واتساب متعدد المزايا`,
       sourceUrl: saluranLink,
       previewType: "VIDEO",
       showAdAttribution: false,
@@ -454,12 +454,10 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
     console.error("Gagal load assets:", e.message);
   }
   const prefix = botConfig.command?.prefix || ".";
-  const saluranId = botConfig.saluran?.id || "120363400911374213@newsletter";
+  const saluranId = botConfig.saluran?.id || "120363401670228863@newsletter";
   const saluranName =
-    botConfig.saluran?.name || botConfig.bot?.name || "Ourin-AI";
-  const saluranLink =
-    botConfig.saluran?.link ||
-    "https://whatsapp.com/channel/0029VbB37bgBfxoAmAlsgE0t";
+    botConfig.saluran?.name || "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌";
+  const saluranLink = botConfig.saluran?.link || "";
   const {
     sorted: menuSorted,
     totalCmds,
@@ -531,12 +529,12 @@ Tekan tombol dibawah untuk info lebih lanjut dan untuk memilih kategori
                       rows: [
                         {
                           title: "🍔 Lihat semua menu yang ada di bot ini",
-                          description: "Silahkan tap lalu kirim",
+                          description: "اختار الزر وابعت الأمر",
                           id: `${m.prefix}sc`
                         },
                         {
                           title: "🥰 Kamu mau samaan kayak bot ini?",
-                          description: "Silahkan tap lalu kirim, nanti bot akan mengirimkan sebuah link download",
+                          description: "اختار الزر وابعت الأمر، والبوت هيبعتلك رابط التحميل",
                           id: `${m.prefix}sc`
                         },
                         {
@@ -631,8 +629,8 @@ ${readmore}${s}`
                       bottom_sheet: {
                         in_thread_buttons_limit: 2,
                         divider_indices: [1, 2, 3, 4, 5, 999],
-                        list_title: "Silahkan pilih menu yang kamu inginkan",
-                        button_title: "🍅 Selengkapnya",
+                        list_title: "اختار الأمر اللي محتاجه",
+                        button_title: "🍅 اعرف أكتر",
                       },
                       tap_target_configuration: {
                         title: " X ",
@@ -682,14 +680,14 @@ ${readmore}${s}`
               {
                 buttonId: `${m.prefix}owner`,
                 buttonText: {
-                  displayText: '🧀 Owner',
+                  displayText: '🧀 المطوّر',
                 },
                 type: 1,
               },
               {
                 buttonId: `${m.prefix}allmenu`,
                 buttonText: {
-                  displayText: '💐 Allmenu',
+                  displayText: '💐 كل الأوامر',
                 },
                 type: 1,
               },
@@ -697,27 +695,27 @@ ${readmore}${s}`
             locationMessage: {
               jpegThumbnail: await sharp(fs.readFileSync(config.assets["ourin"])).resize(300, 170).toBuffer(),
               name: config.bot.name,
-              address: `Versi saat ini: ${config.bot.version}`
+              address: `الإصدار الحالي: ${config.bot.version}`
             },
-            contentText: `🥞 *Hello Brother*
+            contentText: `🥞 *أهلًا يا ${m.pushName || "صاحبي"}*
 
-Welcome to ${config.bot?.name}, Our bot will help you
+أنا *${config.bot?.name}*، بوت واتساب من تطوير *${config.bot?.developer}*. هساعدك في التحميل والألعاب والأسئلة والبحث وعمل الاستيكرات وحاجات تانية كتير.
 
-🍅 *BOT INFORMATION*
-> 🤖 *Name*: ${config.bot?.name}
-> ⚙️ *Version*: ${config.bot?.version}
-> 👨‍💻 *Developer*: ${config.bot?.developer}
-> 🧩 *Library*: \`ourin-baileys\`
+🍅 *معلومات البوت*
+> 🤖 *الاسم*: ${config.bot?.name}
+> ⚙️ *الإصدار*: ${config.bot?.version}
+> 👨‍💻 *المطوّر*: ${config.bot?.developer}
+> 🧩 *المكتبة*: \`ourin-baileys\`
 
-🍅 *USER INFORMATION*
-> 🧑 *Name*: ${m.pushName}
-> 🥐 *Role*: ${m?.isOwner ? "🔥 Owner" : m?.isPremium ? "👑 Premium" : "😊 User"}
-> 🧀 *Level*: ${user.level || 0}
-> 🍗 *Exp*: ${user.exp || 0}
-> 🥩 *Energi*: ${user.energi || 0}
-> 🎏 *Koin*: ${user.koin || 0}
-> 🍬 *Register*: ${user.isRegistered ? "Sudah" : "Belum"}`,
-            footerText: '🍔 Silahkan pilih dari salah satu tombol di bawah',
+🍅 *معلوماتك*
+> 🧑 *الاسم*: ${m.pushName || "عضو"}
+> 🥐 *الصفة*: ${m?.isOwner ? "🔥 المطوّر" : m?.isPremium ? "👑 Premium" : "😊 عضو"}
+> 🧀 *المستوى*: ${user.level || 0}
+> 🍗 *الخبرة*: ${user.exp || 0}
+> 🥩 *الطاقة*: ${user.energi || 0}
+> 🎏 *الكوينز*: ${user.koin || 0}
+> 🍬 *التسجيل*: ${user.isRegistered ? "مسجّل" : "مش مسجّل"}`,
+            footerText: '🍔 اختار من الأزرار اللي تحت عشان تكمل',
             headerType: 6,
           },
         };
@@ -759,7 +757,7 @@ Welcome to ${config.bot?.name}, Our bot will help you
               title: `${cat.emoji} ${cat.cat} Menu`,
               sections: [
                 {
-                  title: "Please select the command",
+                  title: "اختار الأمر اللي محتاجه",
                   highlight_label: config.bot.name,
                   rows: cat.cmds.map((cmd, i) => {
                     return {
@@ -786,7 +784,7 @@ Welcome to ${config.bot?.name}, Our bot will help you
                   videoMessage: media4.videoMessage
                 },
                 footer: {
-                  text: `Please select the button in below`
+                    text: `اختار الزر اللي يناسبك من تحت`
                 },
                 body: {
                   text: `*${greeting} ${m.pushName}*, 𝘔𝘺 𝘯𝘢𝘮𝘦 𝘪𝘴 ${config.bot.name}.
@@ -817,8 +815,8 @@ Enjoy your use brother.`
                     bottom_sheet: {
                       in_thread_buttons_limit: 2,
                       divider_indices: [1, 2, 3, 4, 5, 999],
-                      list_title: "Please select the menu",
-                      button_title: "🍙 See Category",
+                      list_title: "اختار القسم اللي محتاجه",
+                      button_title: "🍙 الأقسام",
                     },
                     tap_target_configuration: {
                       title: " X ",
@@ -931,7 +929,7 @@ Enjoy your use brother.`
                   videoMessage: media4.videoMessage
                 },
                 footer: {
-                  text: `Please select the button in below`
+                  text: `اختار الزر اللي يناسبك من تحت`
                 },
                 body: {
                   text: `🍟 Hai *${m.pushName}* 
@@ -974,8 +972,8 @@ _i am an automated system (WhatsApp bot) that can help to do something search an
                     bottom_sheet: {
                       in_thread_buttons_limit: 2,
                       divider_indices: [1, 2, 3, 4, 5, 999],
-                      list_title: "Please select the menu",
-                      button_title: "🍙 See Category",
+                      list_title: "اختار القسم اللي محتاجه",
+                      button_title: "🍙 الأقسام",
                     },
                     tap_target_configuration: {
                       title: " X ",
@@ -1117,8 +1115,8 @@ _i am an automated system (WhatsApp bot) that can help to do something search an
                     bottom_sheet: {
                       in_thread_buttons_limit: 2,
                       divider_indices: [1, 2, 3, 4, 5, 999],
-                      list_title: "Please select the menu",
-                      button_title: "🍙 See Category",
+                      list_title: "اختار القسم اللي محتاجه",
+                      button_title: "🍙 الأقسام",
                     },
                     tap_target_configuration: {
                       title: " X ",
