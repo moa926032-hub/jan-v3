@@ -253,7 +253,7 @@ async function handler(m, { sock, db }) {
                       text: txt,
                     },
                     footer: {
-                      text: "Pilih tombol dibawah untuk kembali ke menu utama",
+                      text: "اختار الزر اللي تحت عشان ترجع للقائمة الرئيسية",
                     },
                     contextInfo: {
                       isForwarded: true,
@@ -443,7 +443,7 @@ async function handler(m, { sock, db }) {
                     text: txt,
                   },
                   footer: {
-                    text: "Pilih tombol dibawah untuk kembali ke menu utama",
+                    text: "اختار الزر اللي تحت عشان ترجع للقائمة الرئيسية",
                   },
                   contextInfo: {
                     isForwarded: true,
@@ -467,7 +467,7 @@ async function handler(m, { sock, db }) {
                       {
                         name: "quick_reply",
                         buttonParamsJson: JSON.stringify({
-                        display_text: "📂 رجوع لقائمة الأقسام",
+                          display_text: "📂 رجوع لقائمة الأقسام",
                           id: m.prefix + "menucat",
                         }),
                       },
