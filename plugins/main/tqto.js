@@ -18,7 +18,7 @@ const pluginConfig = {
     isEnabled: true
 }
 
-async function handler(m) {
+async function handler(m, { sock }) {
     const botName = config.bot?.name || '𝐉𝐀𝐍 𝐌𝐃 𓅃'
     const version = config.bot?.version || '3.3'
     const developer = config.bot?.developer || '𝑭𝑶𝑹𝑨1𝑶𝑵'
