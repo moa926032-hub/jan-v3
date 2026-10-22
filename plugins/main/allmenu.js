@@ -117,7 +117,7 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
     userRole = "المطوّر";
     roleEmoji = "👑";
   } else if (m.isPremium) {
-    userRole = "Premium";
+    userRole = "عضو مميز";
     roleEmoji = "💎";
   }
   const greeting = getTimeGreeting();
@@ -369,11 +369,11 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
                     { name: "", buttonParamsJson: "" },
                     {
                       name: "quick_reply",
-                      buttonParamsJson: JSON.stringify({ display_text: "📂 Kembali Ke Daftar Kategori", id: m.prefix + "menucat" })
+                      buttonParamsJson: JSON.stringify({ display_text: "📂 رجوع لقائمة الأقسام", id: m.prefix + "menucat" })
                     },
                     {
                       name: "quick_reply",
-                      buttonParamsJson: JSON.stringify({ display_text: "🍅 Kembali Ke Menu Utama", id: m.prefix + "menu" })
+                      buttonParamsJson: JSON.stringify({ display_text: "🍅 رجوع للقائمة الرئيسية", id: m.prefix + "menu" })
                     },
                   ]
                 }
