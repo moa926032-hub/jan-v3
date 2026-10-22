@@ -5,7 +5,7 @@ const pluginConfig = {
     name: "sc",
     alias: ["script"],
     category: "main",
-    description: "Link script bot wa terbaru",
+    description: "رابط مستودع نسخة JAN MD",
     usage: ".sc",
     example: ".sc",
     isPremium: false,
@@ -19,19 +19,20 @@ const pluginConfig = {
 }
 
 async function handler(m, { sock }) {
+    const sourceUrl = config.info?.website || "https://github.com/moa926032-hub/jan-v3";
     return await sock.sendMessage(m.chat, {
         image: getAssetBuffer("ourin"),
-        caption: `🌾 Halo kak *${m.pushName}*
+        caption: `💜 أهلًا يا *${m.pushName || "صاحبي"}*
         
-Untuk asli dari bot ini, kamu bisa dapatkan melalui link, nanti kamu tinggal cari kata kunci *OURIN MD*`,
-        footer: "💬 Link ini nanti akan mengarahkan kamu ke Youtube *Zanspiw*",
+ده مستودع نسخة *${config.bot?.name || "𝐉𝐀𝐍 𝐌𝐃 𓅃"}* الرسمي. هتلاقي فيه الكود والتحديثات الخاصة بالبوت.`,
+        footer: `👨‍💻 المطوّر: ${config.bot?.developer || "𝑭𝑶𝑹𝑨1𝑶𝑵"}`,
         interactiveButtons: [
             {
                 name: "cta_url",
                 buttonParamsJson: JSON.stringify({
-                    display_text: "🥐 Kunjungi Youtube Zanspiw",
-                    url: "https://youtube.com/@JanpiwWok",
-                    merchant_url: "https://youtube.com/@JanpiwWok"
+                    display_text: "📂 افتح مستودع JAN MD",
+                    url: sourceUrl,
+                    merchant_url: sourceUrl
                 })
             }
         ]
