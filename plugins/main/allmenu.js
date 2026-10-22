@@ -82,9 +82,9 @@ function getCommandSymbols(cmdName) {
   return symbols.length > 0 ? " " + symbols.join(" ") : "";
 }
 function getContextInfo(botConfig, m, thumbBuffer) {
-  const saluranId = botConfig.saluran?.id || "120363400911374213@newsletter";
+  const saluranId = botConfig.saluran?.id || "120363401670228863@newsletter";
   const saluranName =
-    botConfig.saluran?.name || botConfig.bot?.name || "Ourin-AI";
+    botConfig.saluran?.name || "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌";
   const saluranLink = botConfig.saluran?.link || "";
   return {
     mentionedJid: [m.sender],
@@ -111,10 +111,10 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
   }
   const totalCases = getCaseCount();
   const totalFeatures = totalCommands + totalCases;
-  let userRole = "User",
+  let userRole = "عضو",
     roleEmoji = "👤";
   if (m.isOwner) {
-    userRole = "Owner";
+    userRole = "المطوّر";
     roleEmoji = "👑";
   } else if (m.isPremium) {
     userRole = "Premium";
@@ -139,29 +139,34 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
     }
   } catch (e) { }
 
-  const userLimit = (m.isPremium || m.isOwner) ? "∞ Unlimited" : (user?.limit || 0);
-  const botName = botConfig.bot?.name || "Remi AI";
-  const devName = botConfig.bot?.developer || "Ell";
-  const botVersion = botConfig.bot?.version || "11.0.0";
-  const pushName = m.pushName || "User";
-  const timeNow = new Date().toLocaleTimeString('id-ID', { timeZone: 'Asia/Jakarta' }).replace(/\./g, ':');
+  const userLimit = (m.isPremium || m.isOwner) ? "∞ بلا حدود" : (user?.limit || 0);
+  const botName = botConfig.bot?.name || "𝐉𝐀𝐍 𝐌𝐃 𓅃";
+  const devName = botConfig.bot?.developer || "𝑭𝑶𝑹𝑨1𝑶𝑵";
+  const botVersion = botConfig.bot?.version || "3.3";
+  const pushName = m.pushName || "عضو";
+  const timeNow = new Date().toLocaleTimeString("ar-EG", {
+    timeZone: "Africa/Cairo",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
 
-  txt += `✦ *Informasi User*\n`;
-  txt += `• Nama   : ${pushName}\n`;
-  txt += `• Status : ${userRole}\n`;
-  txt += `• Limit  : ${userLimit}\n\n`;
-  txt += `✦ *Informasi Bot*\n`;
-  txt += `• Nama   : ${botName}\n`;
-  txt += `• Fitur  : ${totalFeatures} fitur\n`;
-  txt += `• Versi  : ${botVersion}\n`;
-  txt += `• Waktu  : ${timeNow} WIB\n\n`;
-  txt += `✦ *Kelebihan Bot Ini*\n`;
-  txt += `• Fast response\n`;
-  txt += `• Stable system\n`;
-  txt += `• Multi feature\n`;
-  txt += `• User friendly\n\n`;
-  txt += `Silakan pilih menu di bawah ini.\n`;
-  txt += `Gunakan sesuai kebutuhan dan jangan lupa gunakan dengan bijak.\n\n`;
+  txt += `✦ *معلومات المستخدم*\n`;
+  txt += `• الاسم  : ${pushName}\n`;
+  txt += `• الصفة  : ${userRole}\n`;
+  txt += `• الرصيد : ${userLimit}\n\n`;
+  txt += `✦ *معلومات البوت*\n`;
+  txt += `• الاسم  : ${botName}\n`;
+  txt += `• المزايا: ${totalFeatures} ميزة\n`;
+  txt += `• الإصدار: ${botVersion}\n`;
+  txt += `• الساعة : ${timeNow} بتوقيت القاهرة\n\n`;
+  txt += `✦ *مميزات البوت*\n`;
+  txt += `• استجابة سريعة\n`;
+  txt += `• نظام مستقر\n`;
+  txt += `• مزايا كتير\n`;
+  txt += `• سهل الاستخدام\n\n`;
+  txt += `اختار القسم اللي محتاجه من القائمة تحت.\n`;
+  txt += `استخدم الأوامر على قد احتياجك وبمسؤولية.\n\n`;
   const categoryOrder = [
     "owner",
     "main",
@@ -289,7 +294,7 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
                       {
                         name: "quick_reply",
                         buttonParamsJson: JSON.stringify({
-                          display_text: "🍅 Kembali Ke Menu Utama",
+                          display_text: "🍅 رجوع للقائمة الرئيسية",
                           id: m.prefix + "menu"
                         })
                       }
@@ -342,22 +347,22 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
               messageContextInfo: {},
               interactiveMessage: {
                 header: { title: "", subtitle: "", hasMediaAttachment: true, videoMessage: media4.videoMessage },
-                footer: { text: `Please select the button in below` },
+                footer: { text: `اختار الزر اللي يناسبك من تحت` },
                 body: { text: txt },
                 contextInfo: {
                   mentionedJid: [m.sender],
                   isForwarded: true,
                   forwardingScore: 9,
                   forwardedNewsletterMessageInfo: {
-                    newsletterJid: config.saluran?.id || "120363400911374213@newsletter",
-                    newsletterName: config.saluran?.name || config.bot?.name || "Ourin-AI",
+                    newsletterJid: config.saluran?.id || "120363401670228863@newsletter",
+                    newsletterName: config.saluran?.name || "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌",
                     serverMessageId: 127,
                   },
                 },
                 nativeFlowMessage: {
                   messageParamsJson: JSON.stringify({
                     limited_time_offer: { text: `${greeting}`, url: "Hai", expiration_time: Date.now() + 10000 },
-                    bottom_sheet: { in_thread_buttons_limit: 2, divider_indices: [1, 2, 3, 4, 5, 999], list_title: "Please select the menu", button_title: "🍙 See Category" },
+                    bottom_sheet: { in_thread_buttons_limit: 2, divider_indices: [1, 2, 3, 4, 5, 999], list_title: "اختار القسم اللي محتاجه", button_title: "🍙 الأقسام" },
                     tap_target_configuration: { title: " X ", description: "bomboclard", canonical_url: "https://ourin.site", domain: "shop.example.com", button_index: 0 },
                   }),
                   buttons: [
@@ -424,8 +429,8 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
                   isForwarded: true,
                   forwardingScore: 9,
                   forwardedNewsletterMessageInfo: {
-                    newsletterJid: config.saluran?.id || "120363400911374213@newsletter",
-                    newsletterName: config.saluran?.name || config.bot?.name || "Ourin-AI",
+                    newsletterJid: config.saluran?.id || "120363401670228863@newsletter",
+                    newsletterName: config.saluran?.name || "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌",
                     serverMessageId: 127,
                   },
                 },
@@ -582,8 +587,8 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
                     isForwarded: true,
                     forwardingScore: 9,
                     forwardedNewsletterMessageInfo: {
-                      newsletterJid: "120363351980387532@newsletter",
-                      newsletterName: "Ourin Bot",
+                      newsletterJid: config.saluran?.id || "120363401670228863@newsletter",
+                      newsletterName: config.saluran?.name || "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌",
                       serverMessageId: 127,
                     },
                   },
