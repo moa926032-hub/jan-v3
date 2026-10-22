@@ -17,8 +17,8 @@ const pluginConfig = {
   name: "menucat",
   alias: ["mc", "category", "cat"],
   category: "main",
-  description: "Menampilkan commands dalam kategori tertentu",
-  usage: ".menucat <kategori>",
+  description: "عرض أوامر قسم معيّن",
+  usage: ".menucat <القسم>",
   example: ".menucat tools",
   isOwner: false,
   isPremium: false,
@@ -201,13 +201,13 @@ async function handler(m, { sock, db }) {
     });
 
     let txt = ``;
-    txt += createBracketBox("🤖", "KETERANGAN", [
-      "Ⓞ = Hanya untuk owner",
-      "ⓟ = Hanya untuk premium",
-      "Ⓛ = Membutuhkan limit",
-      "Ⓐ = Hanya untuk admin",
-      "Ⓖ = Hanya di dalam grup",
-      "Ⓟ = Hanya di private chat",
+    txt += createBracketBox("🤖", "مفتاح الرموز", [
+      "Ⓞ = للمطوّر بس",
+      "ⓟ = لأعضاء Premium بس",
+      "Ⓛ = محتاج رصيد",
+      "Ⓐ = للأدمن بس",
+      "Ⓖ = جوه الجروبات بس",
+      "Ⓟ = في الخاص بس",
     ]);
 
     for (const cat of visibleCats) {
@@ -277,7 +277,7 @@ async function handler(m, { sock, db }) {
                         {
                           name: "quick_reply",
                           buttonParamsJson: JSON.stringify({
-                            display_text: "🍅 Kembali Ke Menu Utama",
+                            display_text: "🍅 رجوع للقائمة الرئيسية",
                             id: m.prefix + "menu",
                           }),
                         },
@@ -331,29 +331,29 @@ async function handler(m, { sock, db }) {
                 messageContextInfo: {},
                 interactiveMessage: {
                   header: { title: "", subtitle: "", hasMediaAttachment: true, videoMessage: media4.videoMessage },
-                  footer: { text: `Please select the button in below` },
+                  footer: { text: `اختار الزر اللي يناسبك من تحت` },
                   body: { text: txt },
                   contextInfo: {
                     mentionedJid: [m.sender],
                     isForwarded: true,
                     forwardingScore: 9,
                     forwardedNewsletterMessageInfo: {
-                      newsletterJid: config.saluran?.id || "120363400911374213@newsletter",
-                      newsletterName: config.saluran?.name || config.bot?.name || "Ourin-AI",
+                      newsletterJid: config.saluran?.id || "120363401670228863@newsletter",
+                      newsletterName: config.saluran?.name || "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌",
                       serverMessageId: 127,
                     },
                   },
                   nativeFlowMessage: {
                     messageParamsJson: JSON.stringify({
                       limited_time_offer: { text: `${greeting}`, url: "Hai", expiration_time: Date.now() + 10000 },
-                      bottom_sheet: { in_thread_buttons_limit: 2, divider_indices: [1, 2, 3, 4, 5, 999], list_title: "Please select the menu", button_title: "🍙 See Category" },
+                      bottom_sheet: { in_thread_buttons_limit: 2, divider_indices: [1, 2, 3, 4, 5, 999], list_title: "اختار القسم اللي محتاجه", button_title: "🍙 الأقسام" },
                       tap_target_configuration: { title: " X ", description: "bomboclard", canonical_url: "https://ourin.site", domain: "shop.example.com", button_index: 0 },
                     }),
                     buttons: [
                       { name: "", buttonParamsJson: "" },
                       {
                         name: "quick_reply",
-                        buttonParamsJson: JSON.stringify({ display_text: "🍅 Kembali Ke Menu Utama", id: m.prefix + "menu" })
+                        buttonParamsJson: JSON.stringify({ display_text: "🍅 رجوع للقائمة الرئيسية", id: m.prefix + "menu" })
                       },
                     ]
                   }
@@ -409,7 +409,7 @@ async function handler(m, { sock, db }) {
 
   let txt = ``;
   txt += createBracketBox(emoji, categoryName, commandLines);
-  txt += `Total: \`${allCommands.length}\` commands`;
+  txt += `الإجمالي: \`${allCommands.length}\` أمر`;
   if (caseCommands.length > 0) {
     txt += `\n(${pluginCommands.length} plugin + ${caseCommands.length} case)`;
   }
@@ -467,14 +467,14 @@ async function handler(m, { sock, db }) {
                       {
                         name: "quick_reply",
                         buttonParamsJson: JSON.stringify({
-                          display_text: "📂 Kembali Ke Daftar Kategori",
+                        display_text: "📂 رجوع لقائمة الأقسام",
                           id: m.prefix + "menucat",
                         }),
                       },
                       {
                         name: "quick_reply",
                         buttonParamsJson: JSON.stringify({
-                          display_text: "🍅 Kembali Ke Menu Utama",
+                          display_text: "🍅 رجوع للقائمة الرئيسية",
                           id: m.prefix + "menu",
                         }),
                       },
@@ -528,33 +528,33 @@ async function handler(m, { sock, db }) {
               messageContextInfo: {},
               interactiveMessage: {
                 header: { title: "", subtitle: "", hasMediaAttachment: true, videoMessage: media4.videoMessage },
-                footer: { text: `Please select the button in below` },
+                footer: { text: `اختار الزر اللي يناسبك من تحت` },
                 body: { text: txt },
                 contextInfo: {
                   mentionedJid: [m.sender],
                   isForwarded: true,
                   forwardingScore: 9,
                   forwardedNewsletterMessageInfo: {
-                    newsletterJid: config.saluran?.id || "120363400911374213@newsletter",
-                    newsletterName: config.saluran?.name || config.bot?.name || "Ourin-AI",
+                    newsletterJid: config.saluran?.id || "120363401670228863@newsletter",
+                    newsletterName: config.saluran?.name || "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌",
                     serverMessageId: 127,
                   },
                 },
                 nativeFlowMessage: {
                   messageParamsJson: JSON.stringify({
                     limited_time_offer: { text: `${greeting}`, url: "Hai", expiration_time: Date.now() + 10000 },
-                    bottom_sheet: { in_thread_buttons_limit: 2, divider_indices: [1, 2, 3, 4, 5, 999], list_title: "Please select the menu", button_title: "🍙 See Category" },
+                    bottom_sheet: { in_thread_buttons_limit: 2, divider_indices: [1, 2, 3, 4, 5, 999], list_title: "اختار القسم اللي محتاجه", button_title: "🍙 الأقسام" },
                     tap_target_configuration: { title: " X ", description: "bomboclard", canonical_url: "https://ourin.site", domain: "shop.example.com", button_index: 0 },
                   }),
                   buttons: [
                     { name: "", buttonParamsJson: "" },
                     {
                       name: "quick_reply",
-                      buttonParamsJson: JSON.stringify({ display_text: "📂 Kembali Ke Daftar Kategori", id: m.prefix + "menucat" })
+                      buttonParamsJson: JSON.stringify({ display_text: "📂 رجوع لقائمة الأقسام", id: m.prefix + "menucat" })
                     },
                     {
                       name: "quick_reply",
-                      buttonParamsJson: JSON.stringify({ display_text: "🍅 Kembali Ke Menu Utama", id: m.prefix + "menu" })
+                      buttonParamsJson: JSON.stringify({ display_text: "🍅 رجوع للقائمة الرئيسية", id: m.prefix + "menu" })
                     },
                   ]
                 }
@@ -610,8 +610,8 @@ async function handler(m, { sock, db }) {
                   isForwarded: true,
                   forwardingScore: 9,
                   forwardedNewsletterMessageInfo: {
-                    newsletterJid: config.saluran?.id || "120363400911374213@newsletter",
-                    newsletterName: config.saluran?.name || config.bot?.name || "Ourin-AI",
+                    newsletterJid: config.saluran?.id || "120363401670228863@newsletter",
+                    newsletterName: config.saluran?.name || "𝑭𝒍𝒂𝒔𝒉𝒃𝒂𝒄𝒌",
                     serverMessageId: 127,
                   },
                 },
